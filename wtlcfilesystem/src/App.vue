@@ -1,9 +1,10 @@
+<script setup lang="ts">
+import ContractManage from './views/contractManage.vue';
+import Login from './views/login.vue'
+</script>
+
 <template>
-  <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </nav>
-  <router-view />
+  <RouterView></RouterView>
 </template>
 
 <style>

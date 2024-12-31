@@ -1,0 +1,1 @@
+export declare type FormRules<T extends MaybeRef<Record<string, any> | string> = string> = Partial<Record<UnwrapRef<T> extends string ? UnwrapRef<T> : FieldPath<UnwrapRef<T>>, Arrayable<FormItemRule>>>;
