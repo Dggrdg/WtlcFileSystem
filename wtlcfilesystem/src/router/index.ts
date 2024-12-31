@@ -1,9 +1,9 @@
 import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router'
-import ContractManage from '@/views/contractManage.vue'
-import Login from '@/views/login.vue'
-import Search from '@/views/search.vue'
+import ContractManage from '@/views/contractManage/contractManage.vue'
+import Login from '../views/login/login.vue'
+import Search from '@/views/search/search.vue'
 import NotFound from '@/views/404.vue'
-import SystemEdit from '@/views/systemEdit.vue'
+import SystemEdit from '@/views/systemEdit/systemEdit.vue'
 
 const routes: Array<RouteRecordRaw> = [
   {

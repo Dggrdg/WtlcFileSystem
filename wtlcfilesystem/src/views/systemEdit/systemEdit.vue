@@ -71,7 +71,7 @@
 import { ElTable, ElTableColumn, ElButton, ElCheckbox, ElInput, ElMessageBox, ElMessage } from 'element-plus';
 import { ref, computed, onMounted, reactive } from 'vue';
 import { ContractType } from '@/interface/common';
-import sysEditService from '@/service/sysEditService';
+import sysEditService from '@/views/systemEdit/sysEditService';
 
 const search = ref('');
 let tableData = ref<ContractType[]>([]);
