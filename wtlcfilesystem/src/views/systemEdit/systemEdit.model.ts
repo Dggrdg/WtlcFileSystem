@@ -2,5 +2,10 @@ export type ContractType = {
     contractTypeId?: number
     contractTypeName: string
     contractTypeValue?: number
-    status?: string
+}
+
+export type Organ = {
+    organId?: number
+    organName: string
+    organValue?: number
 }

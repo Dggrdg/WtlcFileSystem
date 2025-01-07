@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { ContractType } from './systemEdit.model';
+import { ContractType, Organ } from './systemEdit.model';
 
 export default {
 
@@ -22,6 +22,21 @@ export default {
 
     editContractType: async function (contractType: ContractType) {
         const result = await axios.post('http://localhost:8080/SysParamsEdit/editContractType', contractType)
+        return result;
+    },
+
+    getOrgan: async function (): Promise<any> {
+        const result = axios.post('http://localhost:8080/SysParamsEdit/getOrgan');
+        return result;
+    },
+
+    editOrgan: async function (organ: Organ) {
+        const result = await axios.post('http://localhost:8080/SysParamsEdit/editOrgan', organ)
+        return result;
+    },
+
+    deleteOrgan: async function (deleteArray: any) {
+        const result = await axios.post(`http://localhost:8080/SysParamsEdit/deleteOrgan`, deleteArray);
         return result;
     }
 
