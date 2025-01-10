@@ -58,8 +58,4 @@ watch(
     { immediate: true }
 );
 
-onMounted(() => {
-
-})
-
 </script>
