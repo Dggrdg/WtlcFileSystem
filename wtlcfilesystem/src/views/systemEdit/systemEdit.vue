@@ -76,7 +76,7 @@ import { ElTable, ElTableColumn, ElButton, ElCheckbox, ElInput, ElMessageBox, El
 import { onMounted, ref } from 'vue';
 
 onMounted(() => {
-    console.log();
+    
 })
 
 </script>
