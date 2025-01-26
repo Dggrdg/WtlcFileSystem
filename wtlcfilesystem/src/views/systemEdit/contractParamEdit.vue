@@ -75,8 +75,13 @@
 import { ElTable, ElTableColumn, ElButton, ElCheckbox, ElInput, ElMessageBox, ElMessage, FormInstance } from 'element-plus';
 import { onMounted, ref } from 'vue';
 
-onMounted(() => {
+const getContractType = () => {
     
+}
+
+
+onMounted(() => {
+
 })
 
 </script>

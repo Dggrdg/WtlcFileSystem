@@ -4,7 +4,7 @@
             <p class="title">合約查詢功能</p>
             <div class="functionGroup">
                 <font-awesome-icon :icon="['fas', 'plus']" class="functionIcon" />
-                <RouterLink to="/systemEdit"><font-awesome-icon :icon="['fas', 'gear']" class="functionIcon" />
+                <RouterLink to="/contractParamEdit"><font-awesome-icon :icon="['fas', 'gear']" class="functionIcon" />
                 </RouterLink>
                 <font-awesome-icon :icon="['fas', 'user']" class="functionIcon" />
             </div>

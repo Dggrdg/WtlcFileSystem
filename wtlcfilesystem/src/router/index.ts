@@ -3,7 +3,7 @@ import ContractManage from '@/views/contractManage/contractManage.vue'
 import Login from '../views/login/login.vue'
 import Search from '@/views/search/search.vue'
 import NotFound from '@/views/404.vue'
-import SystemEdit from '@/views/systemEdit/systemEdit.vue'
+import contractParamEdit from '@/views/systemEdit/contractParamEdit.vue'
 
 const routes: Array<RouteRecordRaw> = [
   {
@@ -35,9 +35,9 @@ const routes: Array<RouteRecordRaw> = [
     component: NotFound
   },
   {
-    path: '/systemEdit',
-    name: 'systemEdit',
-    component: SystemEdit
+    path: '/contractParamEdit',
+    name: 'contractParamEdit',
+    component: contractParamEdit
   }
 ]
 

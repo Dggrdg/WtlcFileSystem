@@ -1,10 +1,10 @@
 import axios from 'axios';
-import { ContractType, Organ } from './systemEdit.model';
+import { ContractType, Organ } from './contractParamEdit.model';
 
 export default {
 
     getContractType: async function (): Promise<any> {
-        const result = axios.post('http://localhost:8080/SysParamsEdit/getContractType');
+        const result = axios.post('http://localhost:8080/ContractParamEdit/getContractType');
         return result;
     },
 
