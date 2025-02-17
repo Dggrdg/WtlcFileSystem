@@ -13,6 +13,7 @@
             <div class="buttonGroup">
                 <el-button type="danger" :disabled="selectedContract.length === 0"
                     @click="deleteContractType">刪除</el-button>
+                <el-button type="success" @click="deleteContractType">儲存</el-button>
                 <RouterLink to="/search" class="backButton">
                     <el-button type="warning">返回前一頁</el-button>
                 </RouterLink>
@@ -25,13 +26,21 @@
                     :highlight-current-row="true" @selection-change="handleSelectionChange">
                     <el-table-column prop="date" type="index" />
                     <el-table-column width="50px" type="selection" />
-                    <el-table-column label="合約參數名稱" prop="contractTypeName" width="200px" />
+                    <el-table-column label="合約參數名稱" prop="contractTypeName" width="200px">
+                        <template #default="scope">
+                            <el-input v-if="scope.row.isNew" v-model="scope.row.contractTypeName"
+                                placeholder="請輸入合約類型"></el-input>
+                            <span v-else>{{ scope.row.contractTypeName }}</span>
+                        </template>
+                    </el-table-column>
                     <el-table-column align="right" width="200px">
                         <template #header>
                             <el-button type="success" size="small" @click="addContractType">新增</el-button>
                         </template>
                         <template #default="scope">
-                            <el-button size="small" type="info">編輯</el-button>
+                            <el-button v-if="scope.row.isNew" size="small" type="danger"
+                                @click="removeNewContractType(scope.row)">移除</el-button>
+                            <el-button v-else size="small" type="info">編輯</el-button>
                         </template>
                     </el-table-column>
                 </el-table>
@@ -74,12 +83,15 @@ import { ref, onMounted } from 'vue';
 import { ElMessage, ElMessageBox } from 'element-plus';
 import ContractParamEditService from "@/views/systemEdit/contractParamEditService";
 import axios from 'axios';
+import Test from "@/views/Test/Test.vue";
 
 const contractParamEditService = new ContractParamEditService();
 const contractTypeTable = ref<any[]>([]);
 const contractOrganTypeTable = ref<any[]>([]);
 const selectedContract = ref<any[]>([]);
 const selectedOrgan = ref<any[]>([]);
+
+const name = "你好";
 
 // 獲取合約類型參數
 const getContractType = async () => {
@@ -167,6 +179,10 @@ const deleteContractOrganType = () => {
     }).catch(() => {
         ElMessage.info("已取消刪除");
     });
+};
+
+const removeNewContractType = (row: any) => {
+    contractTypeTable.value = contractTypeTable.value.filter(item => item !== row);
 };
 
 onMounted(() => {
